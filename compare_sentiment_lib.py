@@ -6,14 +6,13 @@ from spacytextblob.spacytextblob import SpacyTextBlob
 from flair.models import TextClassifier
 from flair.data import Sentence
 
-# Download necessary NLTK data
+
 nltk.download('vader_lexicon', quiet=True)
 
-# Load spaCy model
+
 nlp = spacy.load('en_core_web_sm')
 nlp.add_pipe('spacytextblob')
 
-# Load Flair sentiment model
 flair_sentiment = TextClassifier.load('en-sentiment')
 
 def analyze_sentiment(text):
